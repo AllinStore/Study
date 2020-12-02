@@ -6,9 +6,11 @@ import java.util.Collections;
 import java.util.HashMap;
 
 public class map模拟斗地主洗牌发牌 {
+
+
     public static void main(String[] args) {
         //定义map集合存储扑克牌，键是牌的编号，值是牌
-        HashMap<Integer,String> mapPoker = new HashMap<Integer, String>();
+        HashMap<Integer, String> mapPoker = new HashMap<Integer, String>();
 
         //定义一个List集合保存牌的编号，一共54张牌 这里编号范围是0~53
         ArrayList<Integer> pokerNumbers = new ArrayList<Integer>();
@@ -22,27 +24,27 @@ public class map模拟斗地主洗牌发牌 {
 
         //定义一个集合保存牌的数字
         ArrayList<String> numbers = new ArrayList<String>();
-        Collections.addAll(numbers,"2","A","K","Q","J");
-        for (int i = 10; i >= 3; i--){
-            numbers.add(i+"");
+        Collections.addAll(numbers, "2", "A", "K", "Q", "J");
+        for (int i = 10; i >= 3; i--) {
+            numbers.add(i + "");
         }
         //System.out.println("numbers = " + numbers);
         //定义变量作为编号
         int index = 0;
         //将大小王添加到mapPoker集合中
-        mapPoker.put(index,"大王");
+        mapPoker.put(index, "大王");
         pokerNumbers.add(index);
         //修改编号
         index++;
-        mapPoker.put(index,"小王");
+        mapPoker.put(index, "小王");
         pokerNumbers.add(index);
 
         //修改编号
         index++;
         //组装牌 2AKQJ109
-        for (String thisNumber:numbers){
-            for (String thisColor :colors){
-                mapPoker.put(index,thisColor+thisNumber);
+        for (String thisNumber : numbers) {
+            for (String thisColor : colors) {
+                mapPoker.put(index, thisColor + thisNumber);
                 // 将编号保存到pokerNumbers集合中
                 pokerNumbers.add(index);
                 // 修改编号
@@ -87,37 +89,26 @@ public class map模拟斗地主洗牌发牌 {
         Collections.sort(dipai);
 
 
-
         // 看牌
         // 调用方法遍历三个玩家的牌，并根据牌即编号作为key到map集合中查找value
-        /*lookCard(mapPoker, player1, "玩家一");
+        lookCard(mapPoker, player1, "玩家一");
         lookCard(mapPoker, player2, "玩家二");
         lookCard(mapPoker, player3, "玩家三");
         lookCard(mapPoker, dipai, "底牌");
 
 
-        // 看牌方法
-        public static void lookCard(HashMap<Integer, String> mapPoker, ArrayList<Integer> list, String name) {
-            // 创建字符串缓冲区对象
-            StringBuilder sb = new StringBuilder(name).append(": ");
-            //遍历存储编号的集合
-            for (Integer key : list) {
-                //根据key获取值
-                String value = mapPoker.get(key);
-                sb.append(value).append(" ");
-            }
-            System.out.println(sb);
-        }*/
+    }
 
-        StringBuilder sb = new StringBuilder("玩家一").append(": ");
+    // 看牌方法
+    public static void lookCard(HashMap<Integer, String> mapPoker, ArrayList<Integer> list, String name) {
+        // 创建字符串缓冲区对象
+        StringBuilder sb = new StringBuilder(name).append(": ");
         //遍历存储编号的集合
-        for (Integer key : player2) {
+        for (Integer key : list) {
             //根据key获取值
             String value = mapPoker.get(key);
             sb.append(value).append(" ");
         }
         System.out.println(sb);
-
-
     }
 }
