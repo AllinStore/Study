@@ -15,10 +15,10 @@ public class map模拟斗地主洗牌发牌 {
 
         //定义集合保存花色
         ArrayList<String> colors = new ArrayList<String>();
-        colors.add("♣");
-        colors.add("♦");
-        colors.add("♠");
-        colors.add("♥");
+        colors.add("梅花");
+        colors.add("方块");
+        colors.add("黑桃");
+        colors.add("红桃");
 
         //定义一个集合保存牌的数字
         ArrayList<String> numbers = new ArrayList<String>();
@@ -30,11 +30,11 @@ public class map模拟斗地主洗牌发牌 {
         //定义变量作为编号
         int index = 0;
         //将大小王添加到mapPoker集合中
-        mapPoker.put(index,"大☺");
+        mapPoker.put(index,"大王");
         pokerNumbers.add(index);
         //修改编号
         index++;
-        mapPoker.put(index,"小☺");
+        mapPoker.put(index,"小王");
         pokerNumbers.add(index);
 
         //修改编号
@@ -86,7 +86,7 @@ public class map模拟斗地主洗牌发牌 {
         Collections.sort(player3);
         Collections.sort(dipai);
 
-        System.out.println("player1 = " + player1);
+
 
         // 看牌
         // 调用方法遍历三个玩家的牌，并根据牌即编号作为key到map集合中查找value
