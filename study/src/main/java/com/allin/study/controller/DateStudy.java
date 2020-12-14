@@ -54,7 +54,7 @@ public class DateStudy {
 */
         DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
-        Date birthday = format.parse("1996-11-20");
+        Date birthday = format.parse("2020-03-24");
 
         Date today = new Date();
 
@@ -66,18 +66,18 @@ public class DateStudy {
         if (temp < 0){
             System.out.println("还没出生呢！");
         }else {
-            //System.out.println("已经出生了"+temp/1000/60/60/24+"天");
+            System.out.println("已经出生了"+temp/1000/60/60/24+"天");
         }
 
         Calendar calendar = Calendar.getInstance();
         //System.out.println("calendar = " + calendar);
 
-        long start = System.currentTimeMillis();
+       /* long start = System.currentTimeMillis();
         for (int i = 0; i < 9999; i++) {
             System.out.println("i = " + i*4657766*7);
         }
         long end = System.currentTimeMillis();
-        System.out.println("共耗时"+(end-start));
+        System.out.println("共耗时"+(end-start));*/
 
     }
 
